@@ -79,7 +79,7 @@ console.log(instructor);
     //     "price" : "free"
     // }
     
-    
+// json :- Javascript object notations 
 // json on arrays eg
 [
     {},
