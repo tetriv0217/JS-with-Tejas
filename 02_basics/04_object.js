@@ -49,12 +49,40 @@ const users = [
 ]
 // console.log(users[2].email);
 
-console.log(Object.keys(tinderUser));//these array datatypes 
-//[ 'id', 'name', 'isLoggedIn' ]
-console.log(Object.values(tinderUser));
-//[ 'tejas123', 'Tejas', false ]
-console.log(Object.entries(tinderUser));//this convert single key,value pair into individual array pairs
-// [ [ 'id', 'tejas123' ], [ 'name', 'Tejas' ], [ 'isLoggedIn', false ] ]
+// console.log(Object.keys(tinderUser));//these array datatypes 
+// //[ 'id', 'name', 'isLoggedIn' ]
+// console.log(Object.values(tinderUser));
+// //[ 'tejas123', 'Tejas', false ]
+// console.log(Object.entries(tinderUser));//this convert single key,value pair into individual array pairs
+// // [ [ 'id', 'tejas123' ], [ 'name', 'Tejas' ], [ 'isLoggedIn', false ] ]
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn'));//for knowing if the property is there or not in the object
-console.log(tinderUser.hasOwnProperty('isLogged'));
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'));//for knowing if the property is there or not in the object
+// console.log(tinderUser.hasOwnProperty('isLogged'));
+
+// destructuring
+const  course = {
+    coursename : "js in hindi",
+    price : "999",
+    courseInstructor: "tejas"
+}
+
+const {courseInstructor : instructor} = course;
+
+console.log(instructor);
+
+
+// json on objects eg
+
+// {
+    //     "name" : "Tejas",
+    //     "courseName" : "tejas js",
+    //     "price" : "free"
+    // }
+    
+    
+// json on arrays eg
+[
+    {},
+    {},
+    {}
+]
