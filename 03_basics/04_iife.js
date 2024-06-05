@@ -6,6 +6,7 @@ Why it is used:-
 2. To preseve it from global pollution i.e to save it global scope pollution.
  */
 (function chai(){
+    //named IIFEf
     console.log(`DB CONNECTED`);
 })();
 //On arrow function
