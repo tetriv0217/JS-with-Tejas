@@ -70,6 +70,20 @@ form.addEventListener('submit', (e) => {
 ```
 ## Project 3 Solution
 ``` javascript
+const clock = document.querySelector('#clock')
+
+let date = new Date()
+console.log(date.toLocaleDateString())
+
+//setInterval is used for continuous of code
+
+setInterval(()=>{
+  let date = new Date()
+  // console.log(date.toLocaleDateString())
+  clock.style.fontSize = '20px'
+  clock.innerHTML = `Time is ${date.toLocaleTimeString()}`
+},1000)
+
 ```
 ## Project 4 Solution
 ``` javascript
