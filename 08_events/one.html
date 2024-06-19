@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body style="background-color: #212121; color: white">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    //One Approach but better is available,this is not better since it is not scalable and propogation is also low
+    // document.getElementById('owl').onclick = ()=>{
+    //     alert("Owl")
+    // }
+    //attachEvent()
+    //jquery - on
+
+    //type,timestamp,defaultPrevented()
+    //target, toElement, srcElement, currentTarget
+    //clientX,clientY,screenX, screenY
+    //altkey, ctrlkey, shiftkey, keyCode
+
+    //using event Linstener
+
+    //Event propogation:-
+    //Event bubbling(false){default},event capturing(true)
+
+    //Event bubbling :- Inner to outer. Since owl is inside images.owl gets printed first and then clicked inside ul gets printed.This is for false;
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   (e) => {
+    //     console.log("clicked on ul");
+    //   },false);
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   (e) => {
+    //     console.log("owl");
+    //   },false);
+    //Event capturing :- Outer to inner. Since owl is inside images but ul is bigger so ul gets printed first and then owl gets printed.This is for true.
+    //   document.getElementById("images").addEventListener(
+    //     "click",
+    //     (e) => {
+    //       console.log("clicked on ul");
+    //     },true);
+    //   document.getElementById("owl").addEventListener(
+    //     "click",
+    //     (e) => {
+    //       console.log("owl");
+    //     },true);
+
+    // Can stop propogation as well
+    // document.getElementById("images").addEventListener("click",(e) => {
+    //     console.log("clicked on ul");
+    // },false);
+    // document.getElementById("owl").addEventListener("click",(e) => {
+    //     console.log("owl");
+    //     e.stopPropagation();
+    //     //This will stop bubbling;
+    //     //i.e it will stop printing owl,and images tag will not be printed
+    // },false);
+
+    //preventDefault
+    document.getElementById("google").addEventListener(
+      "click",
+      (e) => {
+        e.preventDefault();
+        // e.stopPropagation();
+        console.log("Google clicked");
+      },
+      false
+    );
+
+    //Remove image on click
+    document.querySelector("#images").addEventListener(
+      "click",
+      (e) => {
+        //console.log(e.target.parentNode);//e -> all elements,e.target -> anything you clicked.,e.target.parentNode -> parent of the e.target
+
+        //However This will create an issue as parent node of target will be deleted
+        // let removeIt = e.target.parentNode
+        // removeIt.remove()
+
+        //Here we want to remove images on when someone clicks on imgage only
+        console.log(e.target.tagName);
+        if (e.target.tagName === "IMG") {
+          let removeIt = e.target.parentNode;
+          removeIt.remove();
+        }
+      },
+      false
+    );
+  </script>
+</html>
