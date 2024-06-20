@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tejas Js</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //Set timeout does it once.Set Interval does it infinitly.
+    // setTimeout(()=>{
+    //     console.log("Tejas");
+    // },2000)
+    const changeText = ()=>{
+        const h1 = document.querySelector('h1');
+        // console.log(h1);
+        h1.innerText = "Tejas is the best"
+    }
+
+    const changeMe =  setTimeout(changeText,5000)
+
+    //Now running clearTimeout Function
+    document.querySelector('button').addEventListener('click',()=>{
+        clearTimeout(changeMe)
+        console.log("Stop");
+    })
+</script>
+</html>
