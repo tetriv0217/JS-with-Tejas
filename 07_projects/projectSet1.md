@@ -1,7 +1,8 @@
 # Projects on DOM manipulation
 
 ## Projects link
-[Click Here](https://stackblitz.com/edit/dom-project-chaiaurcode-tieeuk?file=1-colorChanger%2Fchaiaurcode.js)
+[https://stackblitz.com/edit/dom-project-chaiaurcode-tieeuk](https://stackblitz.com/edit/dom-project-chaiaurcode-tieeuk)
+
 
 ## Project 1 Solution
 ```javascript
