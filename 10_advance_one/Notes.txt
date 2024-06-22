@@ -5,3 +5,22 @@ Value	State	Description
 3	LOADING	Downloading; responseText holds partial data.
 4	DONE	The operation is complete.
 
+2.
+pending: initial state, neither fulfilled nor rejected.
+fulfilled: meaning that the operation was completed successfully.
+rejected: meaning that the operation failed.
+
+Promise is completed afterwards
+
+
+3.fetch('',{options})
+
+Theory question on fetch
+Fetch returns a promise.
+The fetch() method takes one mandatory argument, the path to the resource you want to fetch. It returns a Promise that resolves to the Response to that request — as soon as the server responds with headers — even if the server response is an HTTP error status. You can also optionally pass in an init options object as the second argument (see Request).
+
+Once a Response is retrieved, there are a number of methods available to define what the body content is and how it should be handled.
+Eg:-
+Suppose there is 404 error from browser that is a response from the api and "NOT AN ERROR"
+
+4.Fetch has a seperate "Microtask queue","Priority queue"
