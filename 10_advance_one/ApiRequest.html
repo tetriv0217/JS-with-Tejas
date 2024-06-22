@@ -31,6 +31,7 @@
                 e.preventDefault();
                 document.body.append(div)
                 img.setAttribute('src',`${pfp}`)
+                img.style.borderRadius = '50%'
                 p.innerHTML = `Number of followers :- ${data.followers}`
                 div.append(img)
                 div.append(p)
