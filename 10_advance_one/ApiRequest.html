@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: whitesmoke;">
+    
+</body>
+<script>
+    
+    
+    const requestUrl = 'https://api.github.com/users/tetriv0217'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET',requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            //data is in string, so convert the string to json
+            const data = JSON.parse(this.responseText);
+            // console.log(data);
+            const pfp = data.avatar_url;
+            const div = document.createElement('div')
+            const img = document.createElement('img')
+            const button = document.createElement('button')
+            const p = document.createElement('p')
+            document.body.append(button)
+            button.innerText = 'Click here to get info'
+            document.querySelector('button').addEventListener('click',(e)=>{
+                e.preventDefault();
+                document.body.append(div)
+                img.setAttribute('src',`${pfp}`)
+                p.innerHTML = `Number of followers :- ${data.followers}`
+                div.append(img)
+                div.append(p)
+                img.style.width = '120px'
+                img.style.height = '120px'
+                console.log(div);
+                console.log(img);
+                button.remove();
+            })
+            
+            
+            
+            
+        }
+    }
+    console.log("here");
+    xhr.send()
+</script>
+</html>
