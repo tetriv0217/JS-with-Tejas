@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+  <script>
+    // function init() {
+    //   let name = "Mozilla"; // name is a local variable created by init
+    //   function displayName() {
+
+    //     console.log(name);
+    //   }
+    //   displayName();
+    // }
+    // init();
+    // Lexical scoping is basically that
+    //child function can access outer function variables but outer functions cant access inner functions
+
+    //closure
+    // function makeFunc() {
+    //   const name = "Mozilla";
+    //   function displayName() {
+    //     console.log(name);
+    //   }
+    //   return displayName;
+    // }
+
+    // const myFunc = makeFunc();
+    // // This example is important since makeFunc() returns onlt displayName that means makeFunc resoureces should be gone but the memory of javascripts make sure that it's values and declaration are also there
+    
+    // //Whole Lexical Scope is returned
+    // myFunc();
+
+    // Example of this issue
+
+    function clickHandler(color){
+        return ()=>{
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+
+  </script>
+</html>
